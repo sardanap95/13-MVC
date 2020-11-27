@@ -1,0 +1,35 @@
+h2 {
+  text-align: center;
+}
+.flexbox-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 100vh;
+}
+.flexbox-item {
+  height: 30rem;
+  overflow-y: auto;
+}
+.burger-img {
+  height: 50%;
+  width: 50%;
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  margin: 1rem;
+}
+
+button {
+  padding: 20px;
+  margin: 20px;
+}
+
+body {
+  background-color: darkorange;
+}
+
+form {
+  text-align: center;
+}

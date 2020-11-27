@@ -1,0 +1,58 @@
+<div class="container bg-dark d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="row">
+        <div class="col-4">
+            <div class="flexbox-item bg-light rounded">
+                <ul id="uneaten" class="list-group">
+                    <img src="/img/burger.png" class="burger-img" alt="burgerImg" id="burgerImg">
+                    <h2> Devoure Burger </h2>
+                    {{#each burger}}
+                    {{#unless devoured}}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{> burger/burger-block devoured=false}}
+                    </li>
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="flexbox-item bg-light rounded">
+                <ul id="uneaten" class="list-group">
+                    <img src="/img/burger.png" class="burger-img" alt="burgerImg" id="burgerImg">
+                    <h2>Eat Da Burger</h2>
+                    <li class="list-group-item">
+                        <form class="burgerInput form-group">
+                            <div class="input-group mb-3">
+                                <input type="text" id="newBurger" name="burger_name" class="form-control">
+                                <div class="input-group-append">
+                                    <button type="submit" id="burgerBtn" class="btn btn-success">Add Burger</button>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="flexbox-item bg-light rounded">
+                <ul id="eaten" class="list-group">
+                    <img src="/img/burger.png" class="burger-img" alt="burgerImg" id="burgerImg">
+                    <h2>Devoured burgers</h2>
+                    {{#each burger}}
+                    {{#if devoured}}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{> burger/burger-block devoured=true}}
+                    </li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</div>
