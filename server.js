@@ -3,6 +3,8 @@ var routes = require("./controllers/burgers_controller");
 var hbs = require("express-handlebars");
 var app = express();
 
+const port = process.env.PORT || 9090;
+
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -13,6 +15,6 @@ app.set("view engine", "handlebars");
 
 app.use(routes);
 
-app.listen(8080, function () {
-  console.log("Server listening on http://localhost:" + 8080);
+app.listen(port, function () {
+  console.log("Server listening on http://localhost:" + port);
 });

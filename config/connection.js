@@ -1,11 +1,12 @@
-// Set up MySQL connection.
+// Set up MySQL connection. mysql://befcc3a42849a1:ab941443@us-cdbr-east-02.cleardb.com/heroku_e4ee0bd8b9aa420?reconnect=true
+//heroku addons: create cleardb: ignite--fork = mysql://root:sagar8856@localhost/burger_db
 var mysql = require("mysql");
 var connection = mysql.createConnection({
-  host: "localhost",
+  host: "us-cdbr-east-02.cleardb.com",
   port: 3306,
-  user: "root",
-  password: "sagar8856",
-  database: "burgers_db",
+  user: "befcc3a42849a1",
+  password: "ab941443",
+  database: "heroku_e4ee0bd8b9aa420",
 });
 
 connection.connect(function (err) {

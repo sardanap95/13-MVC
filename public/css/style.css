@@ -11,6 +11,7 @@ h2 {
 .flexbox-item {
   height: 30rem;
   overflow-y: auto;
+  margin: 1rem;
 }
 .burger-img {
   height: 50%;
