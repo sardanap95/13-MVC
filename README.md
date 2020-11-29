@@ -2,4 +2,4 @@
 
 - [Vist the app](https://pushpi-devour-burger.herokuapp.com/)
 
-![alt text](/Screenshots/ss.jpeg)
+  ![alt text](/Screenshots/ss.jpeg)
