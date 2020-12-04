@@ -4,19 +4,32 @@ var mysql = require("mysql");
 
 var connection;
 
-var connection = mysql.createConnection({
-  host: "us-cdbr-east-02.cleardb.com",
-  port: 3306,
-  user: "befcc3a42849a1",
-  password: "ab941443",
-  database: "heroku_e4ee0bd8b9aa420",
-});
-
-connectToDB = async () => {
-  connection.connect(function (err) {
-    err ? connectToDB() : console.log("Connected to database.");
+function connectToDB() {
+  connection = mysql.createConnection({
+    host: "us-cdbr-east-02.cleardb.com",
+    port: 3306,
+    user: "befcc3a42849a1",
+    password: "ab941443",
+    database: "heroku_e4ee0bd8b9aa420",
   });
-};
+  connection.connect(function (err) {
+    if (err) {
+      console.log("Failed to connect to database" + err);
+      setTimeout(connectToDB, 10000);
+    } else {
+      console.log("Connected to database.");
+    }
+  });
+
+  connection.on("error", function onError(err) {
+    console.log("db error", err);
+    if (err) {
+      connectToDB();
+    } else {
+      console.log("Failed to connect, please check logs.\n" + err);
+    }
+  });
+}
 
 connectToDB();
 
