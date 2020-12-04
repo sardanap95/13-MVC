@@ -18,6 +18,6 @@ connectToDB = async () => {
   });
 };
 
-await connectToDB();
+connectToDB();
 
 module.exports = connection;
