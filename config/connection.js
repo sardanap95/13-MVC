@@ -14,19 +14,20 @@ function connectToDB() {
   });
   connection.connect(function (err) {
     if (err) {
-      console.log("Failed to connect to database" + err);
+      console.log("Failed to connect to database at " + new Date() + "\n" + err);
       setTimeout(connectToDB, 10000);
     } else {
-      console.log("Connected to database.");
+      console.log("Connected to database at " + new Date());
     }
   });
 
   connection.on("error", function onError(err) {
     console.log("db error", err);
     if (err) {
+      console.log("Reconnecting to DB at " + new Date() + "\n" + err);
       connectToDB();
     } else {
-      console.log("Failed to connect, please check logs.\n" + err);
+      console.log("Failed to connect, please check logs.\n" + new Date() + "\n" + err);
     }
   });
 }
