@@ -12,8 +12,12 @@ var connection = mysql.createConnection({
   database: "heroku_e4ee0bd8b9aa420",
 });
 
-connection.connect(function (err) {
-  err ? console.error("Error in connecting: " + err) : console.log("Connected to database.");
-});
+connectToDB = async () => {
+  connection.connect(function (err) {
+    err ? connectToDB() : console.log("Connected to database.");
+  });
+};
+
+await connectToDB();
 
 module.exports = connection;
